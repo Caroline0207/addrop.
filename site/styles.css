@@ -221,6 +221,7 @@ img { display: block; }
 }
 .phone img {
   width: 100%;
+  height: auto; /* the img's height="956" attribute would otherwise override aspect-ratio */
   aspect-ratio: 402 / 956;
   object-fit: cover;
   object-position: top;
