@@ -1,12 +1,11 @@
-// Cloudflare Pages Function: /api/waitlist
+// /api/waitlist handlers.
 //
 // POST {"email": "..."}  → saves the email to the D1 database bound as `DB`.
 // GET  ?token=...         → downloads every sign-up as CSV (only when the
-//                           ADMIN_TOKEN environment variable is set and matches).
+//                           ADMIN_TOKEN secret is set and matches).
 //
-// Setup (Cloudflare dashboard): create a D1 database, bind it to this Pages
-// project as `DB`, and optionally add an ADMIN_TOKEN secret. The table is
-// created automatically on first use.
+// The D1 binding is declared in wrangler.jsonc. The table is created
+// automatically on first use.
 
 const MAX_EMAIL_LENGTH = 254;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

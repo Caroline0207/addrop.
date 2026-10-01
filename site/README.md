@@ -6,7 +6,7 @@ Static build of `project/Addrop Landing v2.dc.html` (Claude Design handoff). No 
 python3 -m http.server -d site 8000
 ```
 
-(The waitlist API doesn't run under this plain server. Use `wrangler pages dev` below to test it.)
+(The waitlist API doesn't run under this plain server. Use `npx wrangler dev` to test it.)
 
 - `index.html`: markup for every section (nav, hero, marquee, problem, features, app preview, reviews, CTA and footer)
 - `styles.css`: all styling, using the prototype's values
@@ -14,20 +14,18 @@ python3 -m http.server -d site 8000
 
 ## Waitlist
 
-Both forms POST to `/api/waitlist`, a Cloudflare Pages Function (`functions/api/waitlist.js` at the repo root). It saves each email to a Cloudflare D1 database. The table is created automatically, and duplicate emails are ignored.
+The site deploys as a Cloudflare Worker (`wrangler.jsonc` at the repo root). Files in `site/` are served as static assets, except `README.md` and `.assetsignore`, which `.assetsignore` keeps private. Requests to `/api/waitlist` run `worker/index.js`. It saves each email to the D1 database `addrop-waitlist`, bound as `DB`. The table is created automatically, and duplicate emails are ignored.
 
-One-time setup in the Cloudflare dashboard:
-1. **Storage & Databases → D1 → Create database**, e.g. `addrop-waitlist`.
-2. Pages project → **Settings → Bindings → Add → D1 database**. Variable name `DB`, pick the database. Do this for Production (and Preview if you want).
-3. Optional, for CSV export: **Settings → Variables and Secrets → Add**, type Secret, name `ADMIN_TOKEN`, a long random value.
-4. Redeploy (Deployments → ⋯ → Retry deployment), since bindings only apply to new deployments.
+**Database:** declared in `wrangler.jsonc` without a `database_id`. On the first deploy, Wrangler creates the database automatically and reuses it afterwards. If the Workers Build log says provisioning was skipped for lack of permission, create the database yourself (Storage & Databases → D1 → Create, name `addrop-waitlist`) and add its ID to `wrangler.jsonc` as `"database_id"`.
 
-To view sign-ups, open the D1 database → Console → `SELECT * FROM waitlist ORDER BY created_at;`. If `ADMIN_TOKEN` is set, you can also open `https://<your-site>/api/waitlist?token=<ADMIN_TOKEN>` to download a CSV.
+**CSV export (optional):** Worker → Settings → Variables and Secrets → Add, type Secret, name `ADMIN_TOKEN`, a long random value. Then open `https://<your-site>/api/waitlist?token=<ADMIN_TOKEN>`.
 
-Local testing (needs Node):
+**Viewing sign-ups:** D1 → `addrop-waitlist` → Console → `SELECT * FROM waitlist ORDER BY created_at;`
+
+**Local testing** (needs Node; uses a local database):
 
 ```sh
-npx wrangler pages dev site --d1 DB=local-waitlist
+npx wrangler dev
 ```
 
 ## Before launch

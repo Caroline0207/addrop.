@@ -1,0 +1,23 @@
+// Cloudflare Worker config for the addrop. landing page.
+// Workers Builds runs `npx wrangler deploy`, which reads this file.
+{
+  // Must match the Worker's name in the Cloudflare dashboard.
+  "name": "addrop",
+  "main": "worker/index.js",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./site",
+    "binding": "ASSETS",
+    // Static files are served directly; only /api/* runs the Worker script.
+    "run_worker_first": ["/api/*"]
+  },
+  // Waitlist storage. On the first deploy Wrangler creates this D1 database
+  // automatically (no database_id needed) and reuses it afterwards.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "addrop-waitlist"
+    }
+  ],
+  "observability": { "enabled": true }
+}
