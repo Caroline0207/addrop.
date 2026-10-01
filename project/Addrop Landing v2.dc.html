@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAFAF7;color:#111111;font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#111111;text-decoration:none}
+a:hover{color:#4d5c12}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;overflow-x:hidden">
+
+<!-- NAV -->
+<header data-screen-label="Nav" style="position:sticky;top:0;z-index:50;padding:14px clamp(16px,3vw,32px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 10px 10px 22px;border-radius:999px;background:rgba(255,255,255,0.78);backdrop-filter:blur(14px);border:1px solid rgba(17,17,17,0.08)">
+    
+    <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.03em;display:flex;align-items:baseline;gap:1px">addrop&nbsp;<span style="width: 5px; height: 5px; border-radius: 50%; background: rgb(200, 255, 50); display: inline-block; box-shadow: rgb(17, 17, 17) 0px 0px 0px 1.5px"></span></div><nav style="display:flex;gap:28px;font-size:14px;font-weight:500;color:#4a4a46;flex-wrap:wrap">
+      <a href="#why" style="color:inherit">Why addrop.</a>
+      <a href="#features" style="color:inherit">Features</a>
+      <a href="#preview" style="color:inherit">App</a>
+      <a href="#reviews" style="color:inherit">Reviews</a>
+    </nav>
+    <a href="#download" style="display:flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;background:#C8FF32;color:#111;font-size:14px;font-weight:600;border:1.5px solid #111">Join the waitlist <span>→</span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section data-screen-label="Hero" style="position:relative;margin-top:-90px;padding:140px clamp(16px,3vw,32px) 90px">
+  <div style="position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(38% 50% at 82% 40%, rgba(200,255,50,0.45), transparent 70%),radial-gradient(30% 40% at 8% 90%, rgba(200,255,50,0.25), transparent 70%)"></div>
+  <div style="position:relative;z-index:1;max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:48px;align-items:center;justify-content:space-between">
+    <div style="flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:32px">
+      <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid rgba(17,17,17,0.12);font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.02em"><span style="width:8px;height:8px;border-radius:50%;background:#C8FF32;box-shadow:0 0 0 1.5px #111"></span>Your campus, all in one place.</span>
+      <h1 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(60px,9vw,136px);line-height:0.9;letter-spacing:-0.04em">
+        <span style="display:block">Add school.</span>
+        <span style="display:block"><span style="background:#C8FF32;padding:0 0.12em;border-radius:0.18em;box-decoration-break:clone;-webkit-box-decoration-break:clone">Drop</span> thoughts.</span>
+      </h1>
+      <p style="margin:0;max-width:500px;font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:#3d3d39;text-wrap:pretty">Classes, communities, clubs, and campus life in one app.</p>
+      <sc-if value="{{ notJoined }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ onJoin }}" style="display:flex;flex-wrap:wrap;gap:8px;padding:6px;border-radius:999px;background:#fff;border:1.5px solid #111;max-width:520px;width:100%;box-shadow:4px 4px 0 #111">
+          <input type="email" required="{{ true }}" placeholder="mr.goose@uwaterloo.ca" value="{{ email }}" onChange="{{ onEmail }}" style="flex:1 1 200px;min-width:0;border:0;outline:none;background:transparent;padding:12px 18px;font:inherit;font-size:16px;color:#111">
+          <button type="submit" style="flex:0 0 auto;border:0;cursor:pointer;padding:14px 24px;border-radius:999px;background:#111;color:#C8FF32;font:inherit;font-size:15px;font-weight:600">Join the waitlist →</button>
+        </form>
+      </sc-if>
+      <sc-if value="{{ joined }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-radius:999px;background:#111;color:#fff;max-width:520px;width:100%;font-size:15px;text-align:left">
+          <span style="flex:0 0 26px;width:26px;height:26px;border-radius:50%;background:#C8FF32;color:#111;display:grid;place-items:center;font-size:13px;font-weight:700">✓</span>
+          <span>You're on the list. We'll email <b style="color:#C8FF32">{{ email }}</b> at launch.</span>
+        </div>
+      </sc-if>
+      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#55554f">
+        <span style="width:22px;height:22px;border-radius:50%;background:#111;color:#C8FF32;display:grid;place-items:center;font-size:12px;font-weight:700">✓</span>
+        Launching soon. Sign up with your university email for early access.
+      </div>
+    </div>
+
+    <div style="flex:0 1 auto;position:relative;margin:0 auto;width:440px;max-width:100%;height:640px">
+      <div style="position:absolute;left:0;top:50px;width:250px;border-radius:44px;background:#111;padding:8px;transform:rotate(-7deg);box-shadow:0 30px 60px -20px rgba(17,17,17,0.35)">
+        <img src="assets/community.png" alt="Community screen" style="display:block;width:100%;aspect-ratio:402/956;object-fit:cover;object-position:top;border-radius:36px">
+      </div>
+      <div style="position:absolute;right:0;top:0;width:270px;border-radius:46px;background:#111;padding:8px;transform:rotate(4deg);box-shadow:0 40px 80px -20px rgba(17,17,17,0.45)">
+        <img src="assets/home.png" alt="Home screen" style="display:block;width:100%;aspect-ratio:402/956;object-fit:cover;object-position:top;border-radius:38px">
+      </div>
+      <sc-if value="{{ showChips }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;left:-20px;bottom:40px;z-index:3;display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#C8FF32;border:1.5px solid #111;font-size:14px;font-weight:600;transform:rotate(-4deg);box-shadow:3px 3px 0 #111">+ Drop posted anonymously</div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<sc-if value="{{ showMarquee }}" hint-placeholder-val="{{ true }}">
+  <div style="background:#111;color:#C8FF32;padding:18px 0;overflow:hidden;transform:rotate(-1.2deg);margin:0 -20px">{{ marquee }}</div>
+</sc-if>
+
+<!-- PROBLEM -->
+<section id="why" data-screen-label="Problem" style="padding:120px clamp(16px,3vw,32px) 60px">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:56px">
+      <div style="max-width:480px">
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;margin-bottom:16px;color:#55554f">01 / THE PROBLEM</div>
+        <h2 style="margin:0;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-0.03em;font-weight:700;text-wrap:pretty">Campus life is scattered everywhere.</h2>
+        <p style="margin:16px 0 0;font-size:17px;line-height:1.65;color:#55554f;text-wrap:pretty">Your degree is on Quest, your clubs are on Instagram, course reviews are on UW Flow, and your questions live in group chats.</p>
+      </div>
+      <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(64px,10vw,140px);line-height:0.85;letter-spacing:-0.04em;text-align:right">WHY<br><span style="background:#C8FF32;padding:0 0.1em;border-radius:0.15em">addrop.</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px">
+      
+      <div style="border-radius:28px;background:#fff;border:1px solid rgba(17,17,17,0.1);padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#77776f">01</span><span style="padding:6px 12px;border-radius:999px;background:#F0F0EA;font-size:13px;font-weight:600">"Where's the course list again?"</span></div>
+        <div><div style="font-size:22px;font-weight:700;letter-spacing:-0.02em">Academic maze</div><div style="font-size:15px;color:#55554f;margin-top:8px;line-height:1.6">Requirements change, courses aren't offered every term, and advisors are booked when you need them.</div></div>
+      </div><div style="border-radius:28px;background:#fff;border:1px solid rgba(17,17,17,0.1);padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#77776f">02</span><span style="padding:6px 12px;border-radius:999px;background:#F0F0EA;font-size:13px;font-weight:600">"Wait, that event was yesterday?"</span></div>
+        <div><div style="font-size:22px;font-weight:700;letter-spacing:-0.02em">Missed moments</div><div style="font-size:15px;color:#55554f;margin-top:8px;line-height:1.6">Club events, deadlines and campus updates are spread across feeds you never check in time.</div></div>
+      </div>
+      <div style="border-radius:28px;background:#fff;border:1px solid rgba(17,17,17,0.1);padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#77776f">03</span><span style="padding:6px 12px;border-radius:999px;background:#F0F0EA;font-size:13px;font-weight:600">"Is this person even a student?"</span></div>
+        <div><div style="font-size:22px;font-weight:700;letter-spacing:-0.02em">No trusted student space</div><div style="font-size:15px;color:#55554f;margin-top:8px;line-height:1.6">Public forums are full of noise. There's no trusted place to just ask other students.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION / FEATURES -->
+<section id="features" data-screen-label="Solution" style="padding:80px clamp(16px,3vw,32px) 120px">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px">
+      <div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;margin-bottom:16px;color:#55554f">02 / THE SOLUTION</div>
+        <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(48px,7vw,96px);line-height:0.9;letter-spacing:-0.04em">One app.<br>Your whole campus.</h2>
+      </div>
+      <p style="margin:0;max-width:380px;font-size:17px;line-height:1.65;color:#55554f;text-wrap:pretty">addrop. brings academics, community, and campus life together in one place, built around real students.</p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:16px">
+      <!-- Community -->
+      <div style="flex:1 1 380px;min-width:0;border-radius:32px;background:#C8FF32;border:1.5px solid #111;height:560px;padding:32px 32px 0;display:flex;flex-direction:column;gap:28px;overflow:hidden">
+        <div>
+          <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.06em">COMMUNITY</div>
+          <div style="font-size:26px;font-weight:700;letter-spacing:-0.02em;margin-top:10px">Your campus conversation, all in one place.</div>
+          <div style="font-size:15px;line-height:1.6;color:#2b3310;margin-top:10px">Ask questions, share experiences, find housing, talk careers, or simply drop what's on your mind, anonymously or as yourself.</div>
+        </div>
+        <div style="margin:auto auto 0;width:250px;border-radius:40px 40px 0 0;background:#111;padding:8px 8px 0">
+          <img src="assets/community.png" alt="Community" style="display:block;width:100%;aspect-ratio:402/560;object-fit:cover;object-position:top;border-radius:32px 32px 0 0">
+        </div>
+      </div>
+      <!-- Academic -->
+      <div style="flex:1 1 380px;min-width:0;border-radius:32px;background:#fff;border:1px solid rgba(17,17,17,0.1);height:560px;padding:32px 32px 0;display:flex;flex-direction:column;gap:28px;overflow:hidden">
+        <div>
+          <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.06em;color:#55554f">ACADEMIC PLANNING</div>
+          <div style="font-size:26px;font-weight:700;letter-spacing:-0.02em;margin-top:10px">Your degree, mapped out.</div>
+          <div style="font-size:15px;line-height:1.6;color:#55554f;margin-top:10px">Track requirements, explore courses and student reviews, and know what to take next.</div>
+        </div>
+        <div style="margin:auto auto 0;width:250px;border-radius:40px 40px 0 0;background:#111;padding:8px 8px 0">
+          <img src="assets/level200.png" alt="Course checklist" style="display:block;width:100%;aspect-ratio:402/560;object-fit:cover;object-position:top;border-radius:32px 32px 0 0">
+        </div>
+      </div>
+      <!-- Clubs -->
+      <div style="flex:1 1 380px;min-width:0;border-radius:32px;background:#fff;border:1px solid rgba(17,17,17,0.1);height:560px;padding:32px 32px 0;display:flex;flex-direction:column;gap:28px;overflow:hidden">
+        <div>
+          <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.06em;color:#55554f">CLUBS &amp; CAMPUS</div>
+          <div style="font-size:26px;font-weight:700;letter-spacing:-0.02em;margin-top:10px">Never miss what's happening.</div>
+          <div style="font-size:15px;line-height:1.6;color:#55554f;margin-top:10px">Discover clubs, follow campus organizations, find events, and stay on top of important campus updates.</div>
+        </div>
+        <div style="margin:auto auto 0;width:250px;border-radius:40px 40px 0 0;background:#111;padding:8px 8px 0">
+          <img src="assets/clubs.png" alt="Clubs" style="display:block;width:100%;aspect-ratio:402/560;object-fit:cover;object-position:top;border-radius:32px 32px 0 0">
+        </div>
+      </div>
+      <!-- AI -->
+      <div style="flex:2 1 520px;min-width:0;border-radius:32px;background:#111;color:#fff;min-height:440px;padding:32px 32px 0;display:flex;flex-wrap:wrap;gap:32px;overflow:hidden">
+        <div style="flex:1 1 240px;display:flex;flex-direction:column;gap:20px;padding-bottom:32px">
+          <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.06em;color:#C8FF32">ADDROP. AI</div>
+          <div style="font-size:30px;font-weight:700;letter-spacing:-0.02em;line-height:1.15">Ask about your academic path.</div>
+          <div style="font-size:15px;line-height:1.6;color:#c4c4bc">Get personalized help with courses, degree requirements, recommendations, and graduation planning.</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:auto">
+            <span style="align-self:flex-start;padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.2);font-size:13px">Can I graduate by Spring 2027?</span>
+            <span style="align-self:flex-start;padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.2);font-size:13px">What should I take next?</span>
+          </div>
+        </div>
+        <div style="flex:0 0 250px;margin:auto auto 0;border-radius:40px 40px 0 0;background:#2a2a28;padding:8px 8px 0">
+          <img src="assets/ai.png" alt="addrop. AI" style="display:block;width:100%;aspect-ratio:402/600;object-fit:cover;object-position:top;border-radius:32px 32px 0 0">
+        </div>
+      </div>
+      <!-- Verified -->
+      <div style="flex:1 1 380px;min-width:0;border-radius:32px;background:#fff;border:1px solid rgba(17,17,17,0.1);padding:40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px 56px">
+        <div style="flex:1 1 360px;max-width:560px">
+          <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.06em;color:#55554f">VERIFIED STUDENTS</div>
+          <div style="font-size:26px;font-weight:700;letter-spacing:-0.02em;margin-top:10px">A community built around real students.</div>
+          <div style="font-size:15px;line-height:1.6;color:#55554f;margin-top:10px">Verify with your university email to join your campus community — while still having the option to post anonymously.</div>
+        </div>
+        <div style="flex:1 1 320px;max-width:440px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:16px;background:#F5F5F0;border:1px solid rgba(17,17,17,0.08)">
+            <span style="font-family: &quot;Geist Mono&quot;, monospace; font-size: 14px;">mr.goose@uwaterloo.ca</span>
+            <span style="width: 26px; height: 26px; border-radius: 50%; background: rgb(200, 255, 50); border: 1.5px solid rgb(17, 17, 17); display: grid; place-items: center; font-size: 13px; font-weight: 700;">✓</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span style="padding:8px 14px;border-radius:999px;background:#111;color:#C8FF32;font-size:13px;font-weight:600">Post as yourself</span>
+            <span style="padding:8px 14px;border-radius:999px;border:1px solid rgba(17,17,17,0.2);font-size:13px;font-weight:600">Post anonymously</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APP PREVIEW -->
+<section id="preview" data-screen-label="App Preview" style="padding:0 clamp(16px,3vw,32px) 120px">
+  <div style="max-width:1280px;margin:0 auto;border-radius:40px;background:#111;color:#fff;padding:72px 0 64px;position:relative;overflow:hidden">
+    <div style="position:absolute;left:50%;top:65%;width:700px;height:500px;transform:translate(-50%,-50%);background:radial-gradient(closest-side, rgba(200,255,50,0.22), transparent);pointer-events:none"></div>
+    <div style="position:relative;padding:0 clamp(20px,4vw,56px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px">
+      <div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:#C8FF32;margin-bottom:16px">03 / APP PREVIEW</div>
+        <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(44px,6vw,80px);line-height:0.92;letter-spacing:-0.04em">Campus life,<br><span style="color:#C8FF32">in your pocket.</span></h2>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button onClick="{{ scrollPrev }}" style="width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);background:transparent;color:#fff;font-size:20px;cursor:pointer">←</button>
+        <button onClick="{{ scrollNext }}" style="width:52px;height:52px;border-radius:50%;border:0;background:#C8FF32;color:#111;font-size:20px;cursor:pointer">→</button>
+      </div>
+    </div>
+    <div ref="{{ railRef }}" style="position:relative;display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;padding:56px clamp(20px,4vw,56px) 16px;scrollbar-width:none">
+      <sc-for list="{{ screens }}" as="s" hint-placeholder-count="5">
+        <div style="flex:0 0 250px;scroll-snap-align:start;display:flex;flex-direction:column;gap:18px">
+          <div style="border-radius:42px;background:#000;padding:8px;border:1px solid #333">
+            <img src="{{ s.src }}" alt="{{ s.label }}" style="display:block;width:100%;aspect-ratio:402/870;object-fit:cover;object-position:top;border-radius:34px;background:#fff">
+          </div>
+          <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:#C8FF32">{{ s.num }}</span><span style="font-size:15px;font-weight:600">{{ s.label }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" data-screen-label="Reviews" style="padding:110px clamp(16px,3vw,32px);background-color:#F3FFD6;background-image:linear-gradient(rgba(17,17,17,0.06) 1px, transparent 1px),linear-gradient(90deg, rgba(17,17,17,0.06) 1px, transparent 1px);background-size:28px 28px;border-top:1.5px solid #111;border-bottom:1.5px solid #111">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px">
+      <div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;margin-bottom:16px">04 / REVIEWS</div>
+        <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(44px,6vw,80px);line-height:0.92;letter-spacing:-0.04em">Real students.<br>Real drops.</h2>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:20px;background:#fff;border:1.5px solid #111;box-shadow:4px 4px 0 #111">
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:40px;font-weight:800;letter-spacing:-0.03em;line-height:1">4.9</span>
+        <span style="font-size:13px;line-height:1.4;color:#44443f">★★★★★<br>Beta tester rating</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px">
+      <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="6">
+        <div style="border-radius:24px;background:#fff;border:1.5px solid #111;padding:26px;display:flex;flex-direction:column;gap:20px;box-shadow:4px 4px 0 #111">
+          <div style="display:flex;justify-content:space-between;align-items:center"><span style="letter-spacing:2px">★★★★★</span><span style="padding:5px 10px;border-radius:999px;background:#C8FF32;font-size:11px;font-weight:700">{{ r.tag }}</span></div>
+          <p style="margin:0;font-size:16px;line-height:1.65;font-weight:500;text-wrap:pretty;flex:1">{{ r.text }}</p>
+          <div style="display:flex;align-items:center;gap:12px">
+            <span style="width:42px;height:42px;border-radius:50%;background:#111;color:#C8FF32;display:grid;place-items:center;font-weight:700">{{ r.initial }}</span>
+            <div><div style="font-size:15px;font-weight:700">{{ r.name }}</div><div style="font-size:13px;color:#6b6b64">{{ r.major }}</div></div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="download" data-screen-label="CTA" style="padding:40px clamp(16px,3vw,32px) 48px">
+  <div style="max-width:1280px;margin:80px auto 0;border-radius:40px;background:#C8FF32;border:1.5px solid #111;padding:clamp(48px,7vw,96px) clamp(24px,5vw,72px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px">
+    <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(64px,12vw,184px);line-height:0.85;letter-spacing:-0.04em">drop it.</h2>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:-4px">
+      <p style="margin:0;font-size:clamp(22px,2.6vw,32px);font-weight:600;letter-spacing:-0.02em;line-height:1.25;color:#111;text-wrap:balance">Your campus life, all in one place.</p>
+      <span style="display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:999px;background:#111;color:#C8FF32;font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(18px,1.8vw,22px);font-weight:800;letter-spacing:-0.02em">Be the first to get addrop. <span style="font-family:'Geist',sans-serif">↓</span></span>
+    </div>
+    <sc-if value="{{ notJoined }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ onJoin }}" style="display:flex;flex-wrap:wrap;gap:8px;padding:6px;border-radius:999px;background:#fff;border:1.5px solid #111;max-width:520px;width:100%;box-shadow:4px 4px 0 #111">
+          <input type="email" required="{{ true }}" placeholder="you@uwaterloo.ca" value="{{ email }}" onChange="{{ onEmail }}" style="flex:1 1 200px;min-width:0;border:0;outline:none;background:transparent;padding:12px 18px;font:inherit;font-size:16px;color:#111">
+          <button type="submit" style="flex:0 0 auto;border:0;cursor:pointer;padding:14px 24px;border-radius:999px;background:#111;color:#C8FF32;font:inherit;font-size:15px;font-weight:600">Join the waitlist →</button>
+        </form>
+      </sc-if>
+      <sc-if value="{{ joined }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-radius:999px;background:#111;color:#fff;max-width:520px;width:100%;font-size:15px;text-align:left">
+          <span style="flex:0 0 26px;width:26px;height:26px;border-radius:50%;background:#C8FF32;color:#111;display:grid;place-items:center;font-size:13px;font-weight:700">✓</span>
+          <span>You're on the list. We'll email <b style="color:#C8FF32">{{ email }}</b> at launch.</span>
+        </div>
+      </sc-if>
+  </div>
+  <footer style="max-width:1280px;margin:64px auto 0;padding-top:28px;border-top:1px solid rgba(17,17,17,0.12);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:13px;color:#6b6b64">
+    <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.03em;color:#111">addrop.</div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap"><a href="#" style="color:inherit">Terms</a><a href="#" style="color:inherit">Privacy</a><a href="#" style="color:inherit">Contact</a><a href="#" style="color:inherit">Instagram</a></div>
+    <div>© 2026 addrop. Made in Canada.</div>
+  </footer>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showChips&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showMarquee&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  railRef = React.createRef();
+  scroll(d) { const el = this.railRef.current; if (el) el.scrollBy({ left: d * 278, behavior: 'smooth' }); }
+  state = { email: '', joined: false };
+  renderVals() {
+    const words = ['ADD SCHOOL', 'DROP THOUGHTS', 'COMMUNITY', 'ACADEMIC PLANNING', 'CLUBS & CAMPUS', 'ADDROP. AI', 'VERIFIED STUDENTS'];
+    const items = [];
+    for (let k = 0; k < 4; k++) words.forEach((w, i) => {
+      items.push(React.createElement('span', { key: k + '-' + i, style: { display: 'inline-flex', alignItems: 'center', gap: 28, paddingRight: 28 } },
+        w, React.createElement('span', { style: { width: 10, height: 10, borderRadius: '50%', background: '#C8FF32', display: 'inline-block' } })));
+    });
+    const marquee = React.createElement('div', { style: { display: 'inline-flex', whiteSpace: 'nowrap', animation: 'marquee 45s linear infinite', fontFamily: "'Bricolage Grotesque',sans-serif", fontWeight: 800, fontSize: 28, letterSpacing: '-0.01em' } }, items);
+    const screens = [
+      ['assets/start.png', 'Splash'], ['assets/welcome.png', 'Onboarding'], ['assets/home.png', 'Home'],
+      ['assets/community.png', 'Community'], ['assets/campus.png', 'Campus hub'], ['assets/level200.png', 'Course checklist'],
+      ['assets/clubs.png', 'Clubs'], ['assets/ai.png', 'addrop. AI'], ['assets/profile.png', 'Profile']
+    ].map(([src, label], i) => ({ src, label, num: String(i + 1).padStart(2, '0') }));
+    const reviews = [
+      { name: 'Jenna K.', major: 'Honours Chemistry, 3rd year', tag: 'Academic Planning', text: 'I finally know exactly which courses I still need. The checklist replaced the spreadsheet I kept for two years.' },
+      { name: 'Daniel P.', major: 'Computer Science, 2nd year', tag: 'Community', text: 'Asked about co-op interviews at midnight and had ten real answers by morning. Everyone is actually from my campus.' },
+      { name: 'Minji L.', major: 'Economics, 1st year', tag: 'Clubs & Campus', text: 'As a first year I had no idea what clubs existed. Found the Korean Students Association in my first week.' },
+      { name: 'Owen T.', major: 'Mechanical Eng., 4th year', tag: 'addrop. AI', text: 'Asked if I could graduate by Spring and got an actual plan, term by term. Way less stressful than booking an advisor.' },
+      { name: 'Priya S.', major: 'Health Sciences, 2nd year', tag: 'Housing', text: 'Found a roommate through a housing drop. Knowing everyone is a verified student made it feel safe.' },
+      { name: 'Alex R.', major: 'Kinesiology, 3rd year', tag: 'Design', text: 'It looks nothing like a school app, in the best way. Clean, fast, and I actually open it every day.' }
+    ].map(r => ({ ...r, initial: r.name[0] }));
+    return {
+      showChips: this.props.showChips ?? true,
+      showMarquee: this.props.showMarquee ?? true,
+      marquee, screens, reviews,
+      email: this.state.email,
+      joined: this.state.joined,
+      notJoined: !this.state.joined,
+      onEmail: e => this.setState({ email: e.target.value }),
+      onJoin: e => { e.preventDefault(); if (this.state.email.trim()) this.setState({ joined: true }); },
+      railRef: this.railRef,
+      scrollPrev: () => this.scroll(-1),
+      scrollNext: () => this.scroll(1)
+    };
+  }
+}
+</script>
+</body>
+</html>

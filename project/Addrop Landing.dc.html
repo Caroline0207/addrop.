@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+body{margin:0;background:oklch(0.985 0.004 290);color:#16141c;font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:oklch(0.55 0.22 285);text-decoration:none}
+a:hover{color:#16141c}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;overflow-x:hidden">
+
+<!-- NAV -->
+<header data-screen-label="Nav" style="position:sticky;top:0;z-index:50;padding:14px clamp(16px,3vw,32px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 10px 10px 22px;border-radius:999px;background:rgba(255,255,255,0.72);backdrop-filter:blur(14px);border:1px solid rgba(22,20,28,0.08)">
+    <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.04em">addrop<span style="color:oklch(0.58 0.22 285)">.</span></div>
+    <nav style="display:flex;gap:28px;font-size:14px;font-weight:500;color:#4a4652;flex-wrap:wrap">
+      <a href="#why" style="color:inherit">왜 addrop.</a>
+      <a href="#features" style="color:inherit">기능</a>
+      <a href="#preview" style="color:inherit">미리보기</a>
+      <a href="#reviews" style="color:inherit">후기</a>
+    </nav>
+    <a href="#download" style="display:flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;background:#16141c;color:#fff;font-size:14px;font-weight:600">앱 다운로드 <span>→</span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section data-screen-label="Hero" style="position:relative;padding:40px clamp(16px,3vw,32px) 80px;margin-top:-90px;padding-top:140px">
+  <div style="position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(40% 50% at 85% 30%, oklch(0.88 0.09 290 / 0.75), transparent 70%),radial-gradient(35% 45% at 10% 85%, oklch(0.92 0.07 350 / 0.6), transparent 70%),radial-gradient(30% 40% at 55% 95%, oklch(0.93 0.07 200 / 0.6), transparent 70%)"></div>
+  <div style="position:relative;z-index:1;max-width:1280px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:28px;flex-wrap:wrap">
+      <span style="display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid rgba(22,20,28,0.1);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.02em"><span style="width:7px;height:7px;border-radius:50%;background:oklch(0.58 0.22 285)"></span>대학생을 위한 올인원 유틸리티 앱</span>
+    </div>
+    <h1 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(60px,12.4vw,172px);line-height:0.86;letter-spacing:-0.04em">
+      <span style="display:block">add school<span style="color:oklch(0.58 0.22 285)">.</span></span>
+      <span style="display:block;color:oklch(0.58 0.22 285)">drop thoughts<span style="color:#16141c">.</span></span>
+    </h1>
+
+    <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-end;justify-content:space-between;margin-top:48px">
+      <div style="flex:1 1 380px;max-width:520px;display:flex;flex-direction:column;gap:28px">
+        <p style="margin:0;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:#3d3945;text-wrap:pretty">시간표, 학식, 과제 마감, 학교 공지까지 — 흩어진 학교생활은 한 앱에 <b style="color:#16141c">add</b>하고, 머릿속 잡생각은 가볍게 <b style="color:oklch(0.55 0.22 285)">drop</b>하세요.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="#download" style="display:flex;flex-direction:column;padding:12px 22px;border-radius:16px;background:#16141c;color:#fff;min-width:160px"><span style="font-size:11px;opacity:0.7">Download on the</span><span style="font-size:17px;font-weight:700">App Store</span></a>
+          <a href="#download" style="display:flex;flex-direction:column;padding:12px 22px;border-radius:16px;background:#fff;color:#16141c;border:1px solid rgba(22,20,28,0.12);min-width:160px"><span style="font-size:11px;opacity:0.6">GET IT ON</span><span style="font-size:17px;font-weight:700">Google Play</span></a>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="display:flex">
+            <span style="width:34px;height:34px;border-radius:50%;background:oklch(0.9 0.06 350);border:2px solid #fff;display:grid;place-items:center;font-size:12px;font-weight:700">지</span>
+            <span style="width:34px;height:34px;border-radius:50%;background:oklch(0.9 0.06 220);border:2px solid #fff;margin-left:-10px;display:grid;place-items:center;font-size:12px;font-weight:700">민</span>
+            <span style="width:34px;height:34px;border-radius:50%;background:oklch(0.9 0.08 140);border:2px solid #fff;margin-left:-10px;display:grid;place-items:center;font-size:12px;font-weight:700">현</span>
+          </div>
+          <span style="font-size:14px;color:#5a5662">벌써 <b style="color:#16141c">3만 명</b>의 대학생이 쓰고 있어요</span>
+        </div>
+      </div>
+
+      <!-- hero phone -->
+      <div style="flex:0 1 auto;position:relative;margin:0 auto;padding:0 60px">
+        <sc-if value="{{ showChips }}" hint-placeholder-val="{{ true }}">
+          <div style="position:absolute;left:-40px;top:150px;z-index:3;display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:14px;background:#fff;box-shadow:0 10px 30px rgba(40,20,90,0.12);font-size:13px;font-weight:600;transform:rotate(-4deg)"><span style="width:22px;height:22px;border-radius:7px;background:oklch(0.9 0.06 350);display:grid;place-items:center;font-size:11px">D</span>과제 마감 D-2</div>
+          <div style="position:absolute;right:-6px;top:430px;z-index:3;display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:14px;background:#fff;box-shadow:0 10px 30px rgba(40,20,90,0.12);font-size:13px;font-weight:600;transform:rotate(5deg)"><span style="width:22px;height:22px;border-radius:7px;background:oklch(0.9 0.08 140);display:grid;place-items:center;font-size:11px">밥</span>오늘 학식 제육덮밥</div>
+          <div style="position:absolute;left:0;bottom:90px;z-index:3;display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:oklch(0.58 0.22 285);color:#fff;box-shadow:0 10px 30px rgba(90,60,220,0.35);font-size:13px;font-weight:600;transform:rotate(-3deg)">+ 생각 drop 완료</div>
+        </sc-if>
+        <div style="width:290px;height:600px;border-radius:48px;background:#16141c;padding:10px;box-shadow:0 40px 80px -20px rgba(60,30,140,0.35);transform:rotate(3deg)">
+          <div style="width:100%;height:100%;border-radius:38px;background:oklch(0.975 0.008 290);overflow:hidden;position:relative;padding:44px 16px 16px;display:flex;flex-direction:column;gap:10px">
+            <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:90px;height:26px;border-radius:999px;background:#16141c"></div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;padding:0 4px">
+              <div><div style="font-size:11px;color:#7a7682">9월 30일 수요일</div><div style="font-size:20px;font-weight:800;letter-spacing:-0.02em">안녕, 지우</div></div>
+              <div style="width:34px;height:34px;border-radius:50%;background:oklch(0.9 0.06 350);display:grid;place-items:center;font-size:12px;font-weight:700">지</div>
+            </div>
+            <div style="border-radius:20px;background:oklch(0.58 0.22 285);color:#fff;padding:14px">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;opacity:0.8">NEXT CLASS · 15분 후</div>
+              <div style="font-size:18px;font-weight:700;margin-top:6px">자료구조</div>
+              <div style="font-size:12px;opacity:0.85;margin-top:2px">10:30 – 11:45 · 공학관 302호</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div style="border-radius:16px;background:oklch(0.92 0.07 140);padding:12px"><div style="font-size:10px;color:#3d4a3a;font-weight:600">오늘 점심</div><div style="font-size:14px;font-weight:700;margin-top:4px">제육덮밥</div><div style="font-size:11px;color:#4a5547">학생식당 · 5,000원</div></div>
+              <div style="border-radius:16px;background:oklch(0.92 0.06 350);padding:12px"><div style="font-size:10px;color:#5a3a46;font-weight:600">마감 임박</div><div style="font-size:14px;font-weight:700;margin-top:4px">D-2</div><div style="font-size:11px;color:#5a4650">운영체제 레포트</div></div>
+            </div>
+            <div style="border-radius:16px;background:#fff;padding:12px;border:1px solid rgba(22,20,28,0.06)">
+              <div style="font-size:10px;color:#7a7682;font-weight:600;margin-bottom:8px">학교 공지</div>
+              <div style="font-size:12px;font-weight:600;padding:6px 0;border-bottom:1px solid #eee">2학기 수강 정정 기간 안내</div>
+              <div style="font-size:12px;font-weight:600;padding:6px 0">중앙도서관 시험기간 24시 개방</div>
+            </div>
+            <div style="margin-top:auto;display:flex;align-items:center;gap:8px;border-radius:999px;background:#fff;padding:6px 6px 6px 14px;border:1px solid rgba(22,20,28,0.08)">
+              <span style="flex:1;font-size:12px;color:#9a96a2">떠오른 생각, 여기에 drop…</span>
+              <span style="width:30px;height:30px;border-radius:50%;background:#16141c;color:#fff;display:grid;place-items:center;font-size:16px">+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<sc-if value="{{ showMarquee }}" hint-placeholder-val="{{ true }}">
+  <div style="background:oklch(0.58 0.22 285);color:#fff;padding:16px 0;overflow:hidden;transform:rotate(-1.2deg);margin:0 -20px;border-top:2px solid #16141c;border-bottom:2px solid #16141c">{{ marquee }}</div>
+</sc-if>
+
+<!-- WHY / PROBLEM -->
+<section id="why" data-screen-label="Problem" style="padding:120px clamp(16px,3vw,32px) 60px">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:56px">
+      <div style="max-width:460px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;color:oklch(0.55 0.22 285);margin-bottom:16px">01 / PROBLEM</div>
+        <h2 style="margin:0;font-size:clamp(30px,3.6vw,44px);line-height:1.2;letter-spacing:-0.03em;font-weight:800;text-wrap:pretty">학교생활 하나에<br>앱이 다섯 개.</h2>
+        <p style="margin:16px 0 0;font-size:17px;line-height:1.65;color:#5a5662;text-wrap:pretty">공지는 포털에, 과제는 LMS에, 학식은 단톡방에, 할 일은 메모앱에. 정보를 찾느라 정작 중요한 걸 놓치고 있진 않나요?</p>
+      </div>
+      <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(64px,10vw,140px);line-height:0.85;letter-spacing:-0.04em;text-align:right">WHY<br><span style="color:oklch(0.58 0.22 285)">addrop.</span></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+      <div style="border-radius:28px;background:oklch(0.92 0.06 350);padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'JetBrains Mono',monospace;font-size:12px">PAIN 01</span><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:12px;font-weight:600">"공지 언제 올라왔어?"</span></div>
+        <div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:800;letter-spacing:-0.05em;line-height:1">5+</div><div style="font-size:19px;font-weight:700;margin-top:10px">흩어진 앱과 사이트</div><div style="font-size:15px;color:#4a3a42;margin-top:6px;line-height:1.55">포털, LMS, 학과 홈페이지, 단톡방… 매번 로그인하고 찾아 들어가야 해요.</div></div>
+      </div>
+      <div style="border-radius:28px;background:oklch(0.92 0.06 220);padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'JetBrains Mono',monospace;font-size:12px">PAIN 02</span><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:12px;font-weight:600">"헐 그거 오늘까지였어?"</span></div>
+        <div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:800;letter-spacing:-0.05em;line-height:1">D-0</div><div style="font-size:19px;font-weight:700;margin-top:10px">놓치는 마감과 일정</div><div style="font-size:15px;color:#36454e;margin-top:6px;line-height:1.55">과목마다 다른 곳에 올라오는 과제, 정신 차리면 이미 마감일이에요.</div></div>
+      </div>
+      <div style="border-radius:28px;background:oklch(0.93 0.07 140);padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'JetBrains Mono',monospace;font-size:12px">PAIN 03</span><span style="padding:6px 12px;border-radius:999px;background:#fff;font-size:12px;font-weight:600">"아까 뭐 하려 했더라"</span></div>
+        <div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:800;letter-spacing:-0.05em;line-height:1">∞</div><div style="font-size:19px;font-weight:700;margin-top:10px">꽉 찬 머릿속</div><div style="font-size:15px;color:#3a4836;margin-top:6px;line-height:1.55">수업 중 떠오른 아이디어, 할 일, 걱정거리. 적을 곳이 없으니 계속 머리에 남아요.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section id="features" data-screen-label="Solution" style="padding:80px clamp(16px,3vw,32px) 120px">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;color:oklch(0.55 0.22 285);margin-bottom:16px">02 / SOLUTION</div>
+        <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(48px,7vw,96px);line-height:0.9;letter-spacing:-0.05em">ONE APP<br><span style="color:oklch(0.58 0.22 285)">ALL CAMPUS</span></h2>
+      </div>
+      <p style="margin:0;max-width:380px;font-size:17px;line-height:1.65;color:#5a5662;text-wrap:pretty">학교 정보는 addrop.이 알아서 모아오고, 당신은 생각만 drop하면 돼요. 나머지 정리는 우리가 할게요.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+      <div style="grid-column:span 2;border-radius:28px;background:#16141c;color:#fff;padding:32px;min-height:300px;display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;position:relative;overflow:hidden">
+        <div style="max-width:300px;display:flex;flex-direction:column;justify-content:space-between;gap:20px">
+          <span style="align-self:flex-start;padding:6px 12px;border-radius:999px;background:oklch(0.58 0.22 285);font-size:12px;font-weight:600">대표 기능</span>
+          <div><div style="font-size:26px;font-weight:800;letter-spacing:-0.02em">생각 drop</div><div style="font-size:15px;line-height:1.6;color:#c9c5d2;margin-top:8px">한 줄만 던져두면 할 일·일정·메모로 자동 분류돼요. 머릿속은 비우고, 필요할 때 다시 꺼내 보세요.</div></div>
+        </div>
+        <div style="flex:1 1 240px;max-width:340px;display:flex;flex-direction:column;gap:8px;justify-content:center">
+          <div style="align-self:flex-end;padding:10px 14px;border-radius:16px 16px 4px 16px;background:#2a2732;font-size:13px">금요일까지 운영체제 레포트 내기</div>
+          <div style="align-self:flex-start;display:flex;gap:6px;align-items:center;padding:8px 12px;border-radius:999px;background:oklch(0.92 0.06 350);color:#16141c;font-size:12px;font-weight:700">과제 · 10/3 (금) 마감으로 저장됨</div>
+          <div style="align-self:flex-end;padding:10px 14px;border-radius:16px 16px 4px 16px;background:#2a2732;font-size:13px;margin-top:6px">동아리 공연 포스터 아이디어 — 레트로 컨셉?</div>
+          <div style="align-self:flex-start;display:flex;gap:6px;align-items:center;padding:8px 12px;border-radius:999px;background:oklch(0.93 0.07 140);color:#16141c;font-size:12px;font-weight:700">메모 · 동아리 폴더로 정리됨</div>
+        </div>
+      </div>
+      <div style="border-radius:28px;background:oklch(0.93 0.05 290);padding:28px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:20px">
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px">
+          <span style="height:34px;border-radius:8px;background:oklch(0.58 0.22 285)"></span><span style="height:34px;border-radius:8px;background:#fff"></span><span style="height:34px;border-radius:8px;background:oklch(0.92 0.06 350)"></span><span style="height:34px;border-radius:8px;background:#fff"></span><span style="height:34px;border-radius:8px;background:oklch(0.92 0.06 220)"></span>
+          <span style="height:34px;border-radius:8px;background:#fff"></span><span style="height:34px;border-radius:8px;background:oklch(0.93 0.07 140)"></span><span style="height:34px;border-radius:8px;background:#fff"></span><span style="height:34px;border-radius:8px;background:oklch(0.58 0.22 285)"></span><span style="height:34px;border-radius:8px;background:#fff"></span>
+        </div>
+        <div><div style="font-size:22px;font-weight:800;letter-spacing:-0.02em">스마트 시간표</div><div style="font-size:15px;line-height:1.6;color:#4a4652;margin-top:6px">수강 과목을 불러와 자동 생성. 다음 수업 강의실까지 알려줘요.</div></div>
+      </div>
+      <div style="border-radius:28px;background:#fff;border:1px solid rgba(22,20,28,0.08);padding:28px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;gap:20px">
+        <div style="display:flex;gap:6px;flex-wrap:wrap"><span style="padding:6px 12px;border-radius:999px;background:oklch(0.93 0.07 140);font-size:12px;font-weight:600">학생식당</span><span style="padding:6px 12px;border-radius:999px;background:#f2f0f5;font-size:12px;font-weight:600">교직원식당</span><span style="padding:6px 12px;border-radius:999px;background:#f2f0f5;font-size:12px;font-weight:600">기숙사</span></div>
+        <div><div style="font-size:22px;font-weight:800;letter-spacing:-0.02em">오늘의 학식</div><div style="font-size:15px;line-height:1.6;color:#5a5662;margin-top:6px">식당별 메뉴와 가격을 한눈에. 점심시간 고민은 3초면 끝.</div></div>
+      </div>
+      <div style="border-radius:28px;background:#fff;border:1px solid rgba(22,20,28,0.08);padding:28px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;gap:20px">
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-size:48px;font-weight:800;letter-spacing:-0.05em;color:oklch(0.58 0.22 285);line-height:1">D-2</span><span style="font-size:13px;color:#7a7682">운영체제 레포트</span></div>
+        <div><div style="font-size:22px;font-weight:800;letter-spacing:-0.02em">과제 & 마감 알림</div><div style="font-size:15px;line-height:1.6;color:#5a5662;margin-top:6px">LMS 과제를 자동으로 모아 마감 전에 미리 알려드려요.</div></div>
+      </div>
+      <div style="border-radius:28px;background:oklch(0.92 0.06 220);padding:28px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;gap:20px">
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="padding:8px 12px;border-radius:12px;background:#fff;font-size:12px;font-weight:600">[학사] 수강 정정 기간 안내</span><span style="padding:8px 12px;border-radius:12px;background:rgba(255,255,255,0.6);font-size:12px;font-weight:600">[장학] 2학기 교내장학 신청</span></div>
+        <div><div style="font-size:22px;font-weight:800;letter-spacing:-0.02em">공지 모아보기</div><div style="font-size:15px;line-height:1.6;color:#36454e;margin-top:6px">학교·학과 공지를 한 피드에서. 관심 키워드만 골라 받아요.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREVIEW -->
+<section id="preview" data-screen-label="App Preview" style="padding:0 clamp(16px,3vw,32px) 120px">
+  <div style="max-width:1280px;margin:0 auto;border-radius:40px;background:#16141c;color:#fff;padding:80px clamp(20px,4vw,56px) 64px;position:relative;overflow:hidden">
+    <div style="position:absolute;left:50%;top:58%;width:1100px;height:1100px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(255,255,255,0.06);pointer-events:none"></div>
+    <div style="position:absolute;left:50%;top:58%;width:780px;height:780px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(255,255,255,0.08);pointer-events:none"></div>
+    <div style="position:absolute;left:50%;top:58%;width:480px;height:480px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle, oklch(0.58 0.22 285 / 0.45), transparent 70%);pointer-events:none"></div>
+
+    <div style="position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;color:oklch(0.78 0.14 285)">03 / APP PREVIEW</div>
+      <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(44px,6vw,80px);line-height:0.92;letter-spacing:-0.05em">campus life,<br><span style="color:oklch(0.72 0.17 285)">in your pocket.</span></h2>
+      <div style="display:flex;gap:6px;padding:6px;border-radius:999px;background:rgba(255,255,255,0.08);flex-wrap:wrap;justify-content:center">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+          <button onClick="{{ t.onClick }}" style="border:0;cursor:pointer;padding:10px 20px;border-radius:999px;font:inherit;font-size:14px;font-weight:600;background:{{ t.bg }};color:{{ t.fg }}">{{ t.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="position:relative;display:flex;justify-content:center;align-items:flex-end;gap:clamp(12px,3vw,40px);margin-top:56px;flex-wrap:wrap">
+      <!-- phone 1: timetable -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:18px;transition:transform .4s, opacity .4s;transform:{{ p0.transform }};opacity:{{ p0.opacity }}">
+        <div style="width:250px;height:520px;border-radius:42px;background:#000;padding:9px;border:1px solid #333">
+          <div style="width:100%;height:100%;border-radius:34px;background:oklch(0.975 0.008 290);color:#16141c;overflow:hidden;position:relative;padding:40px 14px 14px;display:flex;flex-direction:column;gap:10px">
+            <div style="position:absolute;top:9px;left:50%;transform:translateX(-50%);width:80px;height:22px;border-radius:999px;background:#000"></div>
+            <div style="font-size:18px;font-weight:800">시간표</div>
+            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;font-size:10px;color:#7a7682;text-align:center;font-weight:600"><span>월</span><span>화</span><span style="color:oklch(0.55 0.22 285)">수</span><span>목</span><span>금</span></div>
+            <div style="display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(8,44px);gap:4px">
+              <div style="grid-column:1;grid-row:1/3;border-radius:8px;background:oklch(0.92 0.06 350);padding:5px;font-size:9px;font-weight:700">미적분</div>
+              <div style="grid-column:3;grid-row:2/4;border-radius:8px;background:oklch(0.58 0.22 285);color:#fff;padding:5px;font-size:9px;font-weight:700">자료구조</div>
+              <div style="grid-column:2;grid-row:3/5;border-radius:8px;background:oklch(0.92 0.06 220);padding:5px;font-size:9px;font-weight:700">운영체제</div>
+              <div style="grid-column:4;grid-row:3/5;border-radius:8px;background:oklch(0.92 0.06 220);padding:5px;font-size:9px;font-weight:700">운영체제</div>
+              <div style="grid-column:1;grid-row:5/7;border-radius:8px;background:oklch(0.93 0.07 140);padding:5px;font-size:9px;font-weight:700">교양영어</div>
+              <div style="grid-column:5;grid-row:4/6;border-radius:8px;background:oklch(0.92 0.06 350);padding:5px;font-size:9px;font-weight:700">미적분</div>
+              <div style="grid-column:3;grid-row:6/8;border-radius:8px;background:oklch(0.93 0.05 290);padding:5px;font-size:9px;font-weight:700">캡스톤</div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:15px;font-weight:600;color:#d8d4e0">한눈에 보는 시간표</div>
+      </div>
+
+      <!-- phone 2: drop -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:18px;transition:transform .4s, opacity .4s;transform:{{ p1.transform }};opacity:{{ p1.opacity }}">
+        <div style="width:250px;height:520px;border-radius:42px;background:#000;padding:9px;border:1px solid #333">
+          <div style="width:100%;height:100%;border-radius:34px;background:oklch(0.975 0.008 290);color:#16141c;overflow:hidden;position:relative;padding:40px 14px 14px;display:flex;flex-direction:column;gap:8px">
+            <div style="position:absolute;top:9px;left:50%;transform:translateX(-50%);width:80px;height:22px;border-radius:999px;background:#000"></div>
+            <div style="font-size:18px;font-weight:800">drop 보관함</div>
+            <div style="display:flex;gap:4px"><span style="padding:4px 10px;border-radius:999px;background:#16141c;color:#fff;font-size:10px;font-weight:600">전체</span><span style="padding:4px 10px;border-radius:999px;background:#ebe8f0;font-size:10px;font-weight:600">할 일</span><span style="padding:4px 10px;border-radius:999px;background:#ebe8f0;font-size:10px;font-weight:600">메모</span></div>
+            <div style="border-radius:14px;background:#fff;padding:10px;border:1px solid #eee"><div style="font-size:9px;font-weight:700;color:oklch(0.55 0.2 350)">할 일 · 10/3 마감</div><div style="font-size:12px;font-weight:600;margin-top:3px">운영체제 레포트 제출</div></div>
+            <div style="border-radius:14px;background:#fff;padding:10px;border:1px solid #eee"><div style="font-size:9px;font-weight:700;color:oklch(0.5 0.12 140)">메모 · 동아리</div><div style="font-size:12px;font-weight:600;margin-top:3px">공연 포스터 레트로 컨셉</div></div>
+            <div style="border-radius:14px;background:#fff;padding:10px;border:1px solid #eee"><div style="font-size:9px;font-weight:700;color:oklch(0.5 0.12 220)">일정 · 10/7 18:00</div><div style="font-size:12px;font-weight:600;margin-top:3px">팀플 회의 (도서관 3층)</div></div>
+            <div style="border-radius:14px;background:#fff;padding:10px;border:1px solid #eee"><div style="font-size:9px;font-weight:700;color:oklch(0.55 0.22 285)">생각</div><div style="font-size:12px;font-weight:600;margin-top:3px">휴학 vs 교환학생 장단점 정리</div></div>
+            <div style="margin-top:auto;display:flex;align-items:center;gap:8px;border-radius:999px;background:#fff;padding:5px 5px 5px 12px;border:1px solid #e5e2ea"><span style="flex:1;font-size:11px;color:#9a96a2">무엇이든 drop…</span><span style="width:26px;height:26px;border-radius:50%;background:oklch(0.58 0.22 285);color:#fff;display:grid;place-items:center">+</span></div>
+          </div>
+        </div>
+        <div style="font-size:15px;font-weight:600;color:#d8d4e0">알아서 정리되는 drop</div>
+      </div>
+
+      <!-- phone 3: meals -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:18px;transition:transform .4s, opacity .4s;transform:{{ p2.transform }};opacity:{{ p2.opacity }}">
+        <div style="width:250px;height:520px;border-radius:42px;background:#000;padding:9px;border:1px solid #333">
+          <div style="width:100%;height:100%;border-radius:34px;background:oklch(0.975 0.008 290);color:#16141c;overflow:hidden;position:relative;padding:40px 14px 14px;display:flex;flex-direction:column;gap:8px">
+            <div style="position:absolute;top:9px;left:50%;transform:translateX(-50%);width:80px;height:22px;border-radius:999px;background:#000"></div>
+            <div style="font-size:18px;font-weight:800">오늘의 학식</div>
+            <div style="font-size:10px;color:#7a7682">9월 30일 (수) · 점심</div>
+            <div style="border-radius:16px;background:oklch(0.93 0.07 140);padding:12px"><div style="display:flex;justify-content:space-between;font-size:10px;font-weight:700"><span>학생식당</span><span>5,000원</span></div><div style="font-size:14px;font-weight:800;margin-top:6px">제육덮밥</div><div style="font-size:10px;color:#4a5547;margin-top:2px">미역국 · 김치 · 계란말이</div></div>
+            <div style="border-radius:16px;background:#fff;border:1px solid #eee;padding:12px"><div style="display:flex;justify-content:space-between;font-size:10px;font-weight:700"><span>교직원식당</span><span>6,500원</span></div><div style="font-size:14px;font-weight:800;margin-top:6px">돈까스 정식</div><div style="font-size:10px;color:#7a7682;margin-top:2px">우동 · 샐러드 · 단무지</div></div>
+            <div style="border-radius:16px;background:#fff;border:1px solid #eee;padding:12px"><div style="display:flex;justify-content:space-between;font-size:10px;font-weight:700"><span>기숙사식당</span><span>4,500원</span></div><div style="font-size:14px;font-weight:800;margin-top:6px">비빔밥</div><div style="font-size:10px;color:#7a7682;margin-top:2px">된장국 · 깍두기</div></div>
+            <div style="margin-top:auto;border-radius:14px;background:#16141c;color:#fff;padding:10px 12px;font-size:11px;font-weight:600">학생식당 혼잡도 · <span style="color:oklch(0.85 0.12 140)">여유</span></div>
+          </div>
+        </div>
+        <div style="font-size:15px;font-weight:600;color:#d8d4e0">고민 끝, 오늘의 학식</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" data-screen-label="Reviews" style="padding:110px clamp(16px,3vw,32px);background-color:oklch(0.94 0.04 350);background-image:linear-gradient(rgba(22,20,28,0.06) 1px, transparent 1px),linear-gradient(90deg, rgba(22,20,28,0.06) 1px, transparent 1px);background-size:28px 28px;border-top:2px solid #16141c;border-bottom:2px solid #16141c">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;margin-bottom:16px">04 / REVIEWS</div>
+        <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(44px,6vw,80px);line-height:0.92;letter-spacing:-0.05em">real students,<br><span style="color:oklch(0.55 0.22 285)">real drops.</span></h2>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:20px;background:#fff;border:2px solid #16141c">
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:40px;font-weight:800;letter-spacing:-0.04em;line-height:1">4.9</span>
+        <span style="font-size:13px;line-height:1.4;color:#4a4652">★★★★★<br>App Store 평점</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px">
+      <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="6">
+        <div style="border-radius:24px;background:#fff;border:2px solid #16141c;padding:26px;display:flex;flex-direction:column;gap:20px;box-shadow:4px 4px 0 #16141c">
+          <div style="display:flex;justify-content:space-between;align-items:center"><span style="color:oklch(0.58 0.22 285);letter-spacing:2px">★★★★★</span><span style="padding:5px 10px;border-radius:999px;background:{{ r.tagBg }};font-size:11px;font-weight:700">{{ r.tag }}</span></div>
+          <p style="margin:0;font-size:16px;line-height:1.65;font-weight:500;text-wrap:pretty;flex:1">{{ r.text }}</p>
+          <div style="display:flex;align-items:center;gap:12px">
+            <span style="width:42px;height:42px;border-radius:50%;background:{{ r.tagBg }};border:2px solid #16141c;display:grid;place-items:center;font-weight:800">{{ r.initial }}</span>
+            <div><div style="font-size:15px;font-weight:700">{{ r.name }}</div><div style="font-size:13px;color:#7a7682">{{ r.major }}</div></div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="download" data-screen-label="CTA" style="padding:120px clamp(16px,3vw,32px) 60px;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(40% 60% at 50% 40%, oklch(0.88 0.09 290 / 0.7), transparent 70%)"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:28px">
+    <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(64px,13vw,200px);line-height:0.85;letter-spacing:-0.04em">drop it<span style="color:oklch(0.58 0.22 285)">.</span></h2>
+    <p style="margin:0;font-size:clamp(17px,1.8vw,21px);color:#3d3945;max-width:520px;line-height:1.6">학교는 add, 생각은 drop. 이번 학기는 조금 더 가볍게 시작해요.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+      <a href="#" style="display:flex;flex-direction:column;padding:14px 26px;border-radius:18px;background:#16141c;color:#fff;min-width:180px;text-align:left"><span style="font-size:11px;opacity:0.7">Download on the</span><span style="font-size:19px;font-weight:700">App Store</span></a>
+      <a href="#" style="display:flex;flex-direction:column;padding:14px 26px;border-radius:18px;background:#fff;color:#16141c;border:1px solid rgba(22,20,28,0.12);min-width:180px;text-align:left"><span style="font-size:11px;opacity:0.6">GET IT ON</span><span style="font-size:19px;font-weight:700">Google Play</span></a>
+    </div>
+  </div>
+  <footer style="position:relative;max-width:1280px;margin:120px auto 0;padding-top:28px;border-top:1px solid rgba(22,20,28,0.12);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:13px;color:#7a7682">
+    <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.04em;color:#16141c">addrop<span style="color:oklch(0.58 0.22 285)">.</span></div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap"><a href="#" style="color:inherit">이용약관</a><a href="#" style="color:inherit">개인정보처리방침</a><a href="#" style="color:inherit">문의하기</a><a href="#" style="color:inherit">Instagram</a></div>
+    <div>© 2026 addrop. All rights reserved.</div>
+  </footer>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showChips&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showMarquee&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { tab: 1 };
+  renderVals() {
+    const tab = this.state.tab;
+    const labels = ['시간표', '생각 drop', '학식'];
+    const words = ['ADD SCHOOL', 'DROP THOUGHTS', '시간표', '학식', '과제 마감', '학교 공지', '생각 drop'];
+    const items = [];
+    for (let k = 0; k < 2; k++) words.concat(words).forEach((w, i) => {
+      items.push(React.createElement('span', { key: k + '-' + i, style: { display: 'inline-flex', alignItems: 'center', gap: 28, paddingRight: 28 } },
+        w, React.createElement('span', { style: { width: 10, height: 10, borderRadius: '50%', background: '#fff', display: 'inline-block' } })));
+    });
+    const marquee = React.createElement('div', { style: { display: 'inline-flex', whiteSpace: 'nowrap', animation: 'marquee 40s linear infinite', fontFamily: "'Bricolage Grotesque',sans-serif", fontWeight: 800, fontSize: 28, letterSpacing: '-0.02em' } }, items);
+    const phone = i => ({ transform: i === tab ? 'translateY(-16px) scale(1.04)' : 'scale(0.94)', opacity: i === tab ? 1 : 0.55 });
+    const pastel = ['oklch(0.92 0.06 350)', 'oklch(0.92 0.06 220)', 'oklch(0.93 0.07 140)', 'oklch(0.93 0.05 290)'];
+    const reviews = [
+      { name: '김지우', major: '컴퓨터공학과 22학번', tag: '생각 drop', text: '수업 듣다가 떠오른 거 그냥 던져두면 알아서 할 일로 정리돼요. 메모앱 세 개 지웠어요.' },
+      { name: '박민서', major: '경영학과 24학번', tag: '과제 알림', text: '과제 마감을 한 번도 안 놓친 학기는 처음이에요. D-2 알림이 진짜 생명의 은인.' },
+      { name: '이현우', major: '기계공학과 21학번', tag: '학식', text: '점심 뭐 먹을지 단톡방에 묻던 시절은 끝. 식당별 메뉴랑 혼잡도까지 보여줘서 좋아요.' },
+      { name: '최수아', major: '시각디자인과 23학번', tag: '디자인', text: '학교 앱 특유의 촌스러움이 없어요. 보기만 해도 기분 좋아서 자주 열게 돼요.' },
+      { name: '정도윤', major: '국어국문학과 25학번', tag: '공지', text: '신입생이라 공지 어디 올라오는지도 몰랐는데, 여기 하나만 보면 다 나와요.' },
+      { name: '한예린', major: '심리학과 22학번', tag: '시간표', text: '다음 수업 강의실까지 알려주니까 새 건물 헤맬 일이 없어요. 위젯도 너무 귀여움.' }
+    ].map((r, i) => ({ ...r, initial: r.name[1], tagBg: pastel[i % 4] }));
+    return {
+      showChips: this.props.showChips ?? true,
+      showMarquee: this.props.showMarquee ?? true,
+      marquee,
+      tabs: labels.map((label, i) => ({ label, bg: i === tab ? '#fff' : 'transparent', fg: i === tab ? '#16141c' : '#d8d4e0', onClick: () => this.setState({ tab: i }) })),
+      p0: phone(0), p1: phone(1), p2: phone(2),
+      reviews
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>addrop. — Add school. Drop thoughts.</title>
+<meta name="description" content="addrop. brings academics, community, and campus life together in one app, built around verified students. Join the waitlist.">
+<meta name="theme-color" content="#C8FF32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+<div class="page">
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__bar">
+    <a href="#" class="logo" aria-label="addrop. home">addrop&nbsp;<span class="logo__dot"></span></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#why">Why addrop.</a>
+      <a href="#features">Features</a>
+      <a href="#preview">App</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a href="#download" class="nav__cta">Join the waitlist <span aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__glow"></div>
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <span class="pill-tag"><span class="pill-tag__dot"></span>Your campus, all in one place.</span>
+      <h1 class="display hero__title">
+        <span>Add school.</span>
+        <span><span class="hl">Drop</span> thoughts.</span>
+      </h1>
+      <p class="hero__lede">Classes, communities, clubs, and campus life in one app.</p>
+      <form class="waitlist" data-waitlist novalidate>
+        <label class="sr-only" for="hero-email">University email</label>
+        <input id="hero-email" type="email" name="email" required autocomplete="email" placeholder="mr.goose@uwaterloo.ca">
+        <button type="submit">Join the waitlist →</button>
+      </form>
+      <p class="waitlist-error" role="alert" hidden></p>
+      <div class="waitlist-done" role="status" hidden>
+        <span class="waitlist-done__check" aria-hidden="true">✓</span>
+        <span>You're on the list. We'll email <b data-email></b> at launch.</span>
+      </div>
+      <div class="hero__note">
+        <span class="check" aria-hidden="true">✓</span>
+        Launching soon. Sign up with your university email for early access.
+      </div>
+    </div>
+
+    <div class="hero__phones">
+      <div class="phone phone--back">
+        <img src="assets/community.png" alt="addrop. Community screen" width="402" height="956">
+      </div>
+      <div class="phone phone--front">
+        <img src="assets/home.png" alt="addrop. Home screen" width="402" height="956">
+      </div>
+      <div class="hero__chip" aria-hidden="true">+ Drop posted anonymously</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track"><span class="marquee__item">ADD SCHOOL</span><span class="marquee__item">DROP THOUGHTS</span><span class="marquee__item">COMMUNITY</span><span class="marquee__item">ACADEMIC PLANNING</span><span class="marquee__item">CLUBS &amp; CAMPUS</span><span class="marquee__item">ADDROP. AI</span><span class="marquee__item">VERIFIED STUDENTS</span><span class="marquee__item">ADD SCHOOL</span><span class="marquee__item">DROP THOUGHTS</span><span class="marquee__item">COMMUNITY</span><span class="marquee__item">ACADEMIC PLANNING</span><span class="marquee__item">CLUBS &amp; CAMPUS</span><span class="marquee__item">ADDROP. AI</span><span class="marquee__item">VERIFIED STUDENTS</span><span class="marquee__item">ADD SCHOOL</span><span class="marquee__item">DROP THOUGHTS</span><span class="marquee__item">COMMUNITY</span><span class="marquee__item">ACADEMIC PLANNING</span><span class="marquee__item">CLUBS &amp; CAMPUS</span><span class="marquee__item">ADDROP. AI</span><span class="marquee__item">VERIFIED STUDENTS</span><span class="marquee__item">ADD SCHOOL</span><span class="marquee__item">DROP THOUGHTS</span><span class="marquee__item">COMMUNITY</span><span class="marquee__item">ACADEMIC PLANNING</span><span class="marquee__item">CLUBS &amp; CAMPUS</span><span class="marquee__item">ADDROP. AI</span><span class="marquee__item">VERIFIED STUDENTS</span></div>
+</div>
+
+<!-- PROBLEM -->
+<section id="why" class="problem">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="problem__intro">
+        <div class="eyebrow">01 / THE PROBLEM</div>
+        <h2 class="problem__title">Campus life is scattered everywhere.</h2>
+        <p class="problem__body">Your degree is on Quest, your clubs are on Instagram, course reviews are on UW Flow, and your questions live in group chats.</p>
+      </div>
+      <div class="display problem__why" aria-hidden="true">WHY<br><span class="hl">addrop.</span></div>
+    </div>
+    <div class="card-grid">
+      <article class="problem-card">
+        <div class="problem-card__top"><span class="problem-card__num">01</span><span class="problem-card__quote">"Where's the course list again?"</span></div>
+        <div><h3>Academic maze</h3><p>Requirements change, courses aren't offered every term, and advisors are booked when you need them.</p></div>
+      </article>
+      <article class="problem-card">
+        <div class="problem-card__top"><span class="problem-card__num">02</span><span class="problem-card__quote">"Wait, that event was yesterday?"</span></div>
+        <div><h3>Missed moments</h3><p>Club events, deadlines and campus updates are spread across feeds you never check in time.</p></div>
+      </article>
+      <article class="problem-card">
+        <div class="problem-card__top"><span class="problem-card__num">03</span><span class="problem-card__quote">"Is this person even a student?"</span></div>
+        <div><h3>No trusted student space</h3><p>Public forums are full of noise. There's no trusted place to just ask other students.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION / FEATURES -->
+<section id="features" class="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">02 / THE SOLUTION</div>
+        <h2 class="display features__title">One app.<br>Your whole campus.</h2>
+      </div>
+      <p class="features__lede">addrop. brings academics, community, and campus life together in one place, built around real students.</p>
+    </div>
+
+    <div class="features__grid">
+      <article class="feature feature--shot feature--lime">
+        <div>
+          <div class="feature__label">COMMUNITY</div>
+          <h3>Your campus conversation, all in one place.</h3>
+          <p>Ask questions, share experiences, find housing, talk careers, or simply drop what's on your mind, anonymously or as yourself.</p>
+        </div>
+        <div class="crop-phone"><img src="assets/community.png" alt="Community feed" loading="lazy"></div>
+      </article>
+
+      <article class="feature feature--shot">
+        <div>
+          <div class="feature__label">ACADEMIC PLANNING</div>
+          <h3>Your degree, mapped out.</h3>
+          <p>Track requirements, explore courses and student reviews, and know what to take next.</p>
+        </div>
+        <div class="crop-phone"><img src="assets/level200.png" alt="Course checklist" loading="lazy"></div>
+      </article>
+
+      <article class="feature feature--shot">
+        <div>
+          <div class="feature__label">CLUBS &amp; CAMPUS</div>
+          <h3>Never miss what's happening.</h3>
+          <p>Discover clubs, follow campus organizations, find events, and stay on top of important campus updates.</p>
+        </div>
+        <div class="crop-phone"><img src="assets/clubs.png" alt="Clubs" loading="lazy"></div>
+      </article>
+
+      <article class="feature feature--ai">
+        <div class="feature__copy">
+          <div class="feature__label">ADDROP. AI</div>
+          <h3>Ask about your academic path.</h3>
+          <p>Get personalized help with courses, degree requirements, recommendations, and graduation planning.</p>
+          <div class="ai-prompts">
+            <span>Can I graduate by Spring 2027?</span>
+            <span>What should I take next?</span>
+          </div>
+        </div>
+        <div class="crop-phone"><img src="assets/ai.png" alt="addrop. AI chat" loading="lazy"></div>
+      </article>
+
+      <article class="feature feature--verified">
+        <div class="feature__copy">
+          <div class="feature__label">VERIFIED STUDENTS</div>
+          <h3>A community built around real students.</h3>
+          <p>Verify with your university email to join your campus community — while still having the option to post anonymously.</p>
+        </div>
+        <div class="verify-demo" aria-hidden="true">
+          <div class="verify-demo__email">
+            <span>mr.goose@uwaterloo.ca</span>
+            <span class="verify-demo__check">✓</span>
+          </div>
+          <div class="verify-demo__modes">
+            <span class="is-on">Post as yourself</span>
+            <span>Post anonymously</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- APP PREVIEW -->
+<section id="preview" class="preview">
+  <div class="preview__panel">
+    <div class="preview__glow"></div>
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">03 / APP PREVIEW</div>
+        <h2 class="display preview__title">Campus life,<br><span>in your pocket.</span></h2>
+      </div>
+      <div class="preview__arrows">
+        <button type="button" class="prev" data-rail-dir="-1" aria-label="Previous screens">←</button>
+        <button type="button" class="next" data-rail-dir="1" aria-label="Next screens">→</button>
+      </div>
+    </div>
+    <ul class="rail" data-rail>
+      <li><div class="rail__phone"><img src="assets/start.png" alt="Splash screen" loading="lazy"></div><div class="rail__caption"><span>01</span><span>Splash</span></div></li>
+      <li><div class="rail__phone"><img src="assets/welcome.png" alt="Onboarding screen" loading="lazy"></div><div class="rail__caption"><span>02</span><span>Onboarding</span></div></li>
+      <li><div class="rail__phone"><img src="assets/home.png" alt="Home screen" loading="lazy"></div><div class="rail__caption"><span>03</span><span>Home</span></div></li>
+      <li><div class="rail__phone"><img src="assets/community.png" alt="Community screen" loading="lazy"></div><div class="rail__caption"><span>04</span><span>Community</span></div></li>
+      <li><div class="rail__phone"><img src="assets/campus.png" alt="Campus hub screen" loading="lazy"></div><div class="rail__caption"><span>05</span><span>Campus hub</span></div></li>
+      <li><div class="rail__phone"><img src="assets/level200.png" alt="Course checklist screen" loading="lazy"></div><div class="rail__caption"><span>06</span><span>Course checklist</span></div></li>
+      <li><div class="rail__phone"><img src="assets/clubs.png" alt="Clubs screen" loading="lazy"></div><div class="rail__caption"><span>07</span><span>Clubs</span></div></li>
+      <li><div class="rail__phone"><img src="assets/ai.png" alt="addrop. AI screen" loading="lazy"></div><div class="rail__caption"><span>08</span><span>addrop. AI</span></div></li>
+      <li><div class="rail__phone"><img src="assets/profile.png" alt="Profile screen" loading="lazy"></div><div class="rail__caption"><span>09</span><span>Profile</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- REVIEWS (placeholder copy — replace with real beta tester quotes and rating before launch) -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">04 / REVIEWS</div>
+        <h2 class="display reviews__title">Real students.<br>Real drops.</h2>
+      </div>
+      <div class="rating">
+        <span class="rating__score">4.9</span>
+        <span class="rating__label"><span aria-hidden="true">★★★★★</span><br>Beta tester rating</span>
+      </div>
+    </div>
+    <div class="card-grid" data-review-columns>
+      <figure class="review">
+        <div class="review__top"><span class="review__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review__tag">Academic Planning</span></div>
+        <blockquote>I finally know exactly which courses I still need. The checklist replaced the spreadsheet I kept for two years.</blockquote>
+        <figcaption class="review__who">
+          <span class="review__avatar" aria-hidden="true">J</span>
+          <div><div class="review__name">Jenna K.</div><div class="review__major">Honours Chemistry, 3rd year</div></div>
+        </figcaption>
+      </figure>
+      <figure class="review">
+        <div class="review__top"><span class="review__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review__tag">Community</span></div>
+        <blockquote>Asked about co-op interviews at midnight and had ten real answers by morning. Everyone is actually from my campus.</blockquote>
+        <figcaption class="review__who">
+          <span class="review__avatar" aria-hidden="true">D</span>
+          <div><div class="review__name">Daniel P.</div><div class="review__major">Computer Science, 2nd year</div></div>
+        </figcaption>
+      </figure>
+      <figure class="review">
+        <div class="review__top"><span class="review__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review__tag">Clubs &amp; Campus</span></div>
+        <blockquote>As a first year I had no idea what clubs existed. Found the Korean Students Association in my first week.</blockquote>
+        <figcaption class="review__who">
+          <span class="review__avatar" aria-hidden="true">M</span>
+          <div><div class="review__name">Minji L.</div><div class="review__major">Economics, 1st year</div></div>
+        </figcaption>
+      </figure>
+      <figure class="review">
+        <div class="review__top"><span class="review__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review__tag">addrop. AI</span></div>
+        <blockquote>Asked if I could graduate by Spring and got an actual plan, term by term. Way less stressful than booking an advisor.</blockquote>
+        <figcaption class="review__who">
+          <span class="review__avatar" aria-hidden="true">O</span>
+          <div><div class="review__name">Owen T.</div><div class="review__major">Mechanical Eng., 4th year</div></div>
+        </figcaption>
+      </figure>
+      <figure class="review">
+        <div class="review__top"><span class="review__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review__tag">Housing</span></div>
+        <blockquote>Found a roommate through a housing drop. Knowing everyone is a verified student made it feel safe.</blockquote>
+        <figcaption class="review__who">
+          <span class="review__avatar" aria-hidden="true">P</span>
+          <div><div class="review__name">Priya S.</div><div class="review__major">Health Sciences, 2nd year</div></div>
+        </figcaption>
+      </figure>
+      <figure class="review">
+        <div class="review__top"><span class="review__stars" aria-label="5 out of 5 stars">★★★★★</span><span class="review__tag">Design</span></div>
+        <blockquote>It looks nothing like a school app, in the best way. Clean, fast, and I actually open it every day.</blockquote>
+        <figcaption class="review__who">
+          <span class="review__avatar" aria-hidden="true">A</span>
+          <div><div class="review__name">Alex R.</div><div class="review__major">Kinesiology, 3rd year</div></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="download" class="cta">
+  <div class="cta__panel">
+    <h2 class="display cta__title">drop it.</h2>
+    <div class="cta__sub">
+      <p>Your campus life, all in one place.</p>
+      <span class="cta__label">Be the first to get addrop. <span aria-hidden="true">↓</span></span>
+    </div>
+    <form class="waitlist" data-waitlist novalidate>
+      <label class="sr-only" for="cta-email">University email</label>
+      <input id="cta-email" type="email" name="email" required autocomplete="email" placeholder="you@uwaterloo.ca">
+      <button type="submit">Join the waitlist →</button>
+    </form>
+    <p class="waitlist-error" role="alert" hidden></p>
+    <div class="waitlist-done" role="status" hidden>
+      <span class="waitlist-done__check" aria-hidden="true">✓</span>
+      <span>You're on the list. We'll email <b data-email></b> at launch.</span>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer__logo">addrop.</div>
+    <div class="footer__links"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Contact</a><a href="#">Instagram</a></div>
+    <div>© 2026 addrop. Made in Canada.</div>
+  </footer>
+</section>
+
+</main>
+</div>
+</body>
+</html>
