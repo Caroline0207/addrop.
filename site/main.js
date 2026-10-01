@@ -104,6 +104,8 @@ function initReviewColumns() {
     const n = columnCount();
     if (n === built) return;
     built = n;
+    // Hold the section's height while rebuilding so content below doesn't jump.
+    container.style.minHeight = container.offsetHeight + 'px';
     container.replaceChildren();
 
     for (let c = 0; c < n; c++) {
@@ -138,6 +140,7 @@ function initReviewColumns() {
       setDuration(track, half);
       resizeObserver?.observe(track);
     }
+    container.style.minHeight = '';
   }
 
   function setDuration(track, half) {

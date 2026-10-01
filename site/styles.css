@@ -335,6 +335,7 @@ img { display: block; }
 
 /* ---------- Marquee ---------- */
 .marquee {
+  overflow-anchor: none;
   background: var(--ink);
   color: var(--lime);
   padding: 18px 0;
@@ -706,6 +707,9 @@ img { display: block; }
    component: each column loops translateY(0 → -50%) over a doubled list, with the
    top and bottom faded out by a mask). Built by initReviewColumns() in main.js. */
 .review-columns {
+  /* Never use the moving cards as the browser's scroll anchor; otherwise the page
+     can creep upward along with them while the reader is parked on this section. */
+  overflow-anchor: none;
   display: flex;
   gap: 16px;
   max-height: 740px;
