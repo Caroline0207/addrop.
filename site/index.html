@@ -42,7 +42,8 @@
         <span><span class="hl">Drop</span> thoughts.</span>
       </h1>
       <p class="hero__lede">Classes, communities, clubs, and campus life in one app.</p>
-      <form class="waitlist" data-waitlist novalidate>
+      <form class="waitlist" data-waitlist="hero" novalidate>
+        <input class="sr-only" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label class="sr-only" for="hero-email">University email</label>
         <input id="hero-email" type="email" name="email" required autocomplete="email" placeholder="mr.goose@uwaterloo.ca">
         <button type="submit">Join the waitlist →</button>
@@ -278,7 +279,8 @@
       <p>Your campus life, all in one place.</p>
       <span class="cta__label">Be the first to get addrop. <span aria-hidden="true">↓</span></span>
     </div>
-    <form class="waitlist" data-waitlist novalidate>
+    <form class="waitlist" data-waitlist="cta" novalidate>
+      <input class="sr-only" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label class="sr-only" for="cta-email">University email</label>
       <input id="cta-email" type="email" name="email" required autocomplete="email" placeholder="mr.goose@uwaterloo.ca">
       <button type="submit">Join the waitlist →</button>

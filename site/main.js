@@ -1,9 +1,8 @@
 // addrop. landing page behaviour: waitlist forms + app preview carousel.
 
-// Where waitlist sign-ups are sent. Leave empty to keep sign-ups client-side only
-// (the form just shows its confirmation). Set to an endpoint that accepts
-// POST {"email": "..."} as JSON (Formspree, a serverless function, etc.).
-const WAITLIST_ENDPOINT = '';
+// Where waitlist sign-ups are sent: the Cloudflare Pages Function in
+// functions/api/waitlist.js, which saves them to the D1 database.
+const WAITLIST_ENDPOINT = '/api/waitlist';
 
 document.addEventListener('DOMContentLoaded', () => {
   initWaitlist();
@@ -24,6 +23,7 @@ function initWaitlist() {
 
   forms.forEach((form) => {
     const input = form.querySelector('input[type=email]');
+    const honeypot = form.querySelector('input[name=company]');
     const button = form.querySelector('button');
     const error = form.parentElement.querySelector('.waitlist-error');
 
@@ -43,7 +43,7 @@ function initWaitlist() {
           const res = await fetch(WAITLIST_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-            body: JSON.stringify({ email }),
+            body: JSON.stringify({ email, source: form.dataset.waitlist, company: honeypot?.value || '' }),
           });
           if (!res.ok) throw new Error('HTTP ' + res.status);
         } catch (err) {
